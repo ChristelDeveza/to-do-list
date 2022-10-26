@@ -1,0 +1,66 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgb(211, 211, 233);
+}
+
+.task {
+  background-color: rgb(173, 168, 230);
+  border-radius: 15px;
+}
+
+.instructions {
+  text-align: start;
+}
+
+.img-header {
+  background-size: cover;
+  height: 15rem;
+}
+
+.input-text {
+  background-color: aliceblue;
+  font-size: 20px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 30rem;
+}
+
+.input-task {
+  background-color: aliceblue;
+  font-size: 20px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 40rem;
+}
+
+.img-btn {
+  background-size: cover;
+  width: 2rem;
+}
+
+.task-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+hr {
+  background-color: rgb(15, 16, 34);
+  height: 0.5rem;
+}
+
+button {
+  padding: 0%;
+}
+
+.subtask-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
