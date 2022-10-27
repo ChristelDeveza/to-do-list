@@ -14,6 +14,7 @@ function Actions(props) {
     tasks,
     setTasks,
     numberOfTask,
+    date,
   } = props;
 
   const [inputText, setInputText] = useState(value);
@@ -48,7 +49,6 @@ function Actions(props) {
       taskStatus = tasksList[taskIndex].isDone;
       tasksList[taskIndex].isDone = !taskStatus;
     }
-
     setTasks(tasksList);
   };
 
@@ -94,25 +94,24 @@ function Actions(props) {
   };
 
   const isCompletedTask = tasks.filter((element) => element.isDone).length;
+  
+  const dateFormater = new Date(date).toLocaleDateString('fr-FR');
 
   return (
     <div className='subtask-box'>
-      
       {taskOrSubtask === 2 && (
         <div>
-         
           <h3>
-            Liste de tâche numéro {numberOfTask}/{tasks.length}{' '}
+            Liste de tâches numéro {numberOfTask}/{tasks.length}{' '}
           </h3>
-          
 
           <h2>{value}</h2>
-
+          <h3>Date de création : {dateFormater}</h3>
           <p>
-            Rappel du nombre de tâches réalisées: {isCompletedTask}/{tasks.length}
+            Rappel du nombre de tâches réalisées: {isCompletedTask}/
+            {tasks.length}
           </p>
         </div>
-          
       )}
       <input type='checkbox' checked={isDone} onChange={handleStatus} />
       <input

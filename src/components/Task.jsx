@@ -3,6 +3,7 @@ import Actions from './Actions';
 import Input from './Input';
 import Subtask from './Subtask';
 
+
 function Task(props) {
   const { task, taskIndex, tasks, setTasks } = props;
 
@@ -17,8 +18,6 @@ function Task(props) {
       setTasks={setTasks}
     />
   ));
-
-  console.log('task', task);
 
   const isCompletedSubtask = task.subtask.filter(
     (element) => element.isDone
@@ -38,6 +37,7 @@ function Task(props) {
         value={task.taskName}
         isDone={task.isDone}
         numberOfTask={task.numberOfTask}
+        date={task.date}
       />
       <h4>
         Nombre de sous-tâches réalisées pour la liste {task.taskName}:{' '}
@@ -55,6 +55,7 @@ function Task(props) {
           setTasks={setTasks}
         />
       </div>
+ 
     </div>
   );
 }

@@ -8,7 +8,6 @@ function Input(props) {
 
   const handleChange = (e) => {
     setInputText(e.target.value);
-    console.log(e.target.value);
   };
 
   //Add a task or subtask - function Enter
@@ -31,6 +30,7 @@ function Input(props) {
             {
               id: Math.floor(Math.random() * 100),
               numberOfTask: tasks.length === 0 ? 1 : tasks.length + 1,
+              date: Date(),
               taskName: inputText,
               isDone: false,
               subtask: [],
@@ -43,7 +43,6 @@ function Input(props) {
   };
 
   //Add a task or subtask - function click
-
   const handleClick = () => {
     if (inputText) {
       if (taskOrSubtask === 1) {
@@ -62,6 +61,7 @@ function Input(props) {
           {
             id: Math.floor(Math.random() * 100),
             numberOfTask: tasks.length === 0 ? 1 : tasks.length + 1,
+            date: Date(),
             taskName: inputText,
             isDone: false,
             subtask: [],
@@ -74,13 +74,12 @@ function Input(props) {
   return (
     <div className='task-box'>
       {' '}
-     
       <input
         onChange={handleChange}
         value={inputText}
         onKeyDown={handleEnter}
         placeholder={placeholder}
-        className="input-text"
+        className='input-text'
       />
       {taskOrSubtask === 2 && (
         <button onClick={handleClick}>

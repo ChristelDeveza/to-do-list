@@ -19,8 +19,7 @@ function App() {
       setTasks={setTasks}
     />
   ));
-
-  console.log(taskList);
+  console.log('tacks', tasks);
   return (
     <div className='App'>
       <h1>Bienvenue dans votre gestionnaire de tâches</h1>
@@ -47,12 +46,11 @@ function App() {
           <img className='img-btn' src={supp} alt='delete-button' />
         </li>
       </ul>
-
       <Input
-        placeholder='Ajouter une tâche...'
         taskOrSubtask={2}
         tasks={tasks}
         setTasks={setTasks}
+        placeholder='Ajouter une tâche...'
       />
 
       {taskList}
