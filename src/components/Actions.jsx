@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 import supp from '../assets/supprimer.png';
 import todo from '../assets/liste-de-choses-a-faire.png';
 import done from '../assets/verifier.png';
@@ -60,7 +61,7 @@ function Actions(props) {
         //update subtask
         tasksList[taskIndex].subtask[subIndex].subtaskName = inputText;
         alert(
-          `${(tasksList[taskIndex].subtask[subIndex].subtaskName =
+          `${ (tasksList[taskIndex].subtask[subIndex].subtaskName =
             inputText)} a été mis à jour`
         );
       } else {
@@ -80,21 +81,23 @@ function Actions(props) {
     if (taskOrSubtask === 1) {
       //update subtask
       tasksList[taskIndex].subtask[subIndex].subtaskName = inputText;
-      alert(
-        `${(tasksList[taskIndex].subtask[subIndex].subtaskName =
+      Swal.fire(
+       `${(tasksList[taskIndex].subtask[subIndex].subtaskName =
           inputText)} a été mis à jour`
       );
     } else {
       //update task
       tasksList[taskIndex].taskName = inputText;
-      alert(`${(tasksList[taskIndex].taskName = inputText)} a été mis à jour`);
+      Swal.fire(
+        `${(tasksList[taskIndex].taskName = inputText)} a été mis à jour`
+      );
     }
 
     setTasks(tasksList);
   };
 
   const isCompletedTask = tasks.filter((element) => element.isDone).length;
-  
+
   const dateFormater = new Date(date).toLocaleDateString('fr-FR');
 
   return (
