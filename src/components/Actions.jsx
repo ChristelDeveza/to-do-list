@@ -53,43 +53,44 @@ function Actions(props) {
     setTasks(tasksList);
   };
 
-  // function update/change the task or subtask name
-  const updateTask = (e) => {
-    if (e.key === 'Enter') {
-      const tasksList = [...tasks];
-      if (taskOrSubtask === 1) {
-        //update subtask
-        tasksList[taskIndex].subtask[subIndex].subtaskName = inputText;
-        alert(
-          `${ (tasksList[taskIndex].subtask[subIndex].subtaskName =
-            inputText)} a été mis à jour`
-        );
-      } else {
-        //update task
-        tasksList[taskIndex].taskName = inputText;
-        alert(
-          `${(tasksList[taskIndex].taskName = inputText)} a été mis à jour`
-        );
-      }
+  // // function update/change the task or subtask name
+  // const updateTask = (e) => {
+  //   if (e.key === 'Enter') {
+  //     const tasksList = [...tasks];
+  //     if (taskOrSubtask === 1) {
+  //       //update subtask
+  //       tasksList[taskIndex].subtask[subIndex].subtaskName = inputText;
+  //       alert(
+  //         `${ (tasksList[taskIndex].subtask[subIndex].subtaskName =
+  //           inputText)} a été mise à jour`
+  //       );
+  //     } else {
+  //       //update task
+  //       tasksList[taskIndex].taskName = inputText;
+  //       alert(
+  //         `${(tasksList[taskIndex].taskName = inputText)} a été mise à jour`
+  //       );
+  //     }
 
-      setTasks(tasksList);
-    }
-  };
+  //     setTasks(tasksList);
+  //   }
+  // };
 
+// function update/change the task or subtask name
   const updateTaskButton = () => {
     const tasksList = [...tasks];
     if (taskOrSubtask === 1) {
       //update subtask
       tasksList[taskIndex].subtask[subIndex].subtaskName = inputText;
       Swal.fire(
-       `${(tasksList[taskIndex].subtask[subIndex].subtaskName =
-          inputText)} a été mis à jour`
+       `La sous-tâche ${(tasksList[taskIndex].subtask[subIndex].subtaskName =
+          inputText)} a été mise à jour`
       );
     } else {
       //update task
       tasksList[taskIndex].taskName = inputText;
       Swal.fire(
-        `${(tasksList[taskIndex].taskName = inputText)} a été mis à jour`
+        `La liste ${(tasksList[taskIndex].taskName = inputText)} a été mise à jour`
       );
     }
 
@@ -121,7 +122,7 @@ function Actions(props) {
         style={{ textDecorationLine: isDone ? 'line-through' : 'none' }}
         value={inputText}
         onChange={addTask}
-        onKeyDown={updateTask}
+    //    onKeyDown={updateTask}
         className='input-task'
       />
 

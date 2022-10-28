@@ -19,7 +19,6 @@ function App() {
       setTasks={setTasks}
     />
   ));
-  console.log('tacks', tasks);
   return (
     <div className='App'>
       <h1>Bienvenue dans votre gestionnaire de tâches</h1>
@@ -38,8 +37,7 @@ function App() {
         <li>
           Pour changer le nom d'une tâche ou d'une sous-tâche, modifiez le nom
           dans le champs, puis cliquez sur{' '}
-          <img className='img-btn' src={update} alt='update-button' /> ou tapez
-          sur "Entrer".
+          <img className='img-btn' src={update} alt='update-button' />.
         </li>
         <li>
           Pour supprimer une tâche ou une sous-tâche, cliquez sur{' '}
@@ -50,7 +48,7 @@ function App() {
         taskOrSubtask={2}
         tasks={tasks}
         setTasks={setTasks}
-        placeholder='Ajouter une tâche...'
+        placeholder='Ajouter une liste de tâches...'
       />
 
       {taskList}
