@@ -35,6 +35,14 @@
   width: 40rem;
 }
 
+.input-test {
+  background-color: rgb(205, 200, 242);
+  font-size: 20px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 40rem;
+}
+
 .img-btn {
   background-size: cover;
   width: 2rem;

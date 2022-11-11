@@ -76,21 +76,22 @@ function Actions(props) {
   //   }
   // };
 
-// function update/change the task or subtask name
+  // function update/change the task or subtask name
   const updateTaskButton = () => {
     const tasksList = [...tasks];
     if (taskOrSubtask === 1) {
       //update subtask
       tasksList[taskIndex].subtask[subIndex].subtaskName = inputText;
       Swal.fire(
-       `La sous-tâche ${(tasksList[taskIndex].subtask[subIndex].subtaskName =
+        `La sous-tâche ${(tasksList[taskIndex].subtask[subIndex].subtaskName =
           inputText)} a été mise à jour`
       );
     } else {
       //update task
       tasksList[taskIndex].taskName = inputText;
       Swal.fire(
-        `La liste ${(tasksList[taskIndex].taskName = inputText)} a été mise à jour`
+        `La liste ${(tasksList[taskIndex].taskName =
+          inputText)} a été mise à jour`
       );
     }
 
@@ -122,8 +123,8 @@ function Actions(props) {
         style={{ textDecorationLine: isDone ? 'line-through' : 'none' }}
         value={inputText}
         onChange={addTask}
-    //    onKeyDown={updateTask}
-        className='input-task'
+        //    onKeyDown={updateTask}
+        className={inputText==="" ? 'input-task' : 'input-test'}
       />
 
       {taskOrSubtask && (
