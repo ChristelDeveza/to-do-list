@@ -26,9 +26,13 @@ function Actions(props) {
     if (taskOrSubtask === 2) {
       tasksList.splice(taskIndex, 1);
       setTasks(tasksList);
+      Swal.fire(
+        `La liste ${value} a été supprimée`
+      );
     } else {
       tasksList[taskIndex].subtask.splice(subIndex, 1);
       setTasks(tasksList);
+      Swal.fire(`La sous-tâche ${value} a été supprimée`);
     }
     console.log('Tasks List', tasksList);
   };
@@ -124,7 +128,7 @@ function Actions(props) {
         value={inputText}
         onChange={addTask}
         //    onKeyDown={updateTask}
-        className={inputText==="" ? 'input-task' : 'input-test'}
+        className={inputText === '' ? 'input-task' : 'input-test'}
       />
 
       {taskOrSubtask && (
